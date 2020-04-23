@@ -1,5 +1,7 @@
 <!DOCTYPE html>
     <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="abet.js"></script>
         <link rel="stylesheet" type="text/css" href="abet.css">
         <title>UTK ABET</title>
     </head>
@@ -60,7 +62,7 @@
                         </li>
                     </ol>
 
-                    <table>
+                    <table id="assessment">
                         <tr class="plan_row">
                             <th>Weight (%)</th>
                             <th>Description</th>
@@ -71,19 +73,14 @@
                             <td width="60%"><textarea class="i txt" maxlength="400" rows="4"></textarea></td>
                             <td width="10%"><div class="trash"></div></td>
                         </tr>
-                        <tr class="plan_row">
-                            <td width="5%"><input class="i" type="number" min="0" max="100" placeholder="1"></td>
-                            <td width="60%"><textarea class="i txt" maxlength="400" rows="4"></textarea></td>
-                            <td width="10%"><div class="trash"></div></td>
-                        </tr>
                     </table>
 
                     <div class="bttn_clear" style="text-align: left">
-                        <a href="#"><button class="bttn new">+ New</button></a>
+                        <button class="bttn new">+ New</button>
                     </div>
 
                     <div class="bttn_clear" style="text-align: right">
-                        <a href="#"><button class="bttn save">Save Assessments</button></a>
+                        <button class="bttn save">Save Assessments</button>
                     </div>
                 <hr class="b">
                 </div>
