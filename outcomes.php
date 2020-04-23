@@ -16,11 +16,15 @@ $conn->set_charset("utf8");
 /* Update this query for each file  */
 
 // Prepare query
-$stmt = $conn->prepare("select ores.outcomeId, o.outcomeDescription
-                        from OutcomeResults ores natural join Outcomes o
-                        where ores.sectionId = ? and ores.major = ?
-                        group by outcomeId
-                        order by outcomeId;");
+$stmt = $conn->prepare("SELECT DISTINCT o.outcomeId, o.outcomeDescription
+                        FROM Outcomes o, CourseOutcomeMapping c, Sections s
+                        WHERE o.outcomeId=c.outcomeId
+                        AND s.courseId = c.courseId
+                        AND o.major=c.major
+                        AND s.sectionId=?
+                        AND o.major=?
+                        ORDER BY o.outcomeId;");
+
 
 if (!$stmt) {
   echo $conn->errno . ' ' . $conn->error;
