@@ -9,7 +9,7 @@ CREATE TABLE Instructors (
     PRIMARY KEY(instructorId)
 );
 
--- Courses(courseId, courseTitle): 
+-- Courses(courseId, courseTitle):
 drop table if exists Courses;
 CREATE TABLE Courses (
     courseId VARCHAR(8),
@@ -27,7 +27,7 @@ CREATE TABLE Sections (
     year VARCHAR(4),
     PRIMARY KEY (sectionId),
     FOREIGN KEY (courseId) REFERENCES Courses(courseId) ON DELETE CASCADE,
-    FOREIGN KEY (instructorId) REFERENCES Instructors(instructorId) 
+    FOREIGN KEY (instructorId) REFERENCES Instructors(instructorId)
 );
 
 -- Outcomes(outcomeId, outcomeDescription, major)
@@ -43,8 +43,8 @@ CREATE TABLE Outcomes (
 drop table if Exists OutcomeResults;
 CREATE TABLE OutcomeResults (
     sectionId SMALLINT UNSIGNED,
-    outcomeId SMALLINT UNSIGNED,
     major ENUM('CS','CpE', 'EE'),
+    outcomeId SMALLINT UNSIGNED,
     performanceLevel ENUM('1', '2', '3'),
     numberOfStudents SMALLINT UNSIGNED,
     PRIMARY KEY (sectionId, outcomeId, major, performanceLevel),
