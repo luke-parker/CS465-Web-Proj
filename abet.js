@@ -14,4 +14,12 @@ $(document).ready(function() {
     $(document).on("click", ".trash", function() {
         $(this).closest(".plan_row").remove();
     });
+
+    // Fetch the outcomes using an ajax query
+    var xhttp = new XMLHttpRequest();
+    console.log($("#select_course option:selected"));
+    var sectionId;
+    var major;
+
+
 });
