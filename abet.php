@@ -17,10 +17,10 @@
                     <!-- <option value="spring 2020 COSC 402">spring 2020 COSC 402</option> -->
                     <?php
                         // First, build the string up
-                        for ($i = 0; i < count($_SESSION['courses']); i++) {
-                            $row = $_SESSION['courses'][i];
+                        for ($i = 0; $i < count($_SESSION['courses']); $i++) {
+                            $row = $_SESSION['courses'][$i];
                             $str = $row['courseId'] + " " + $row['semester'] + " " + $row['year'] + " " + $row['year'];
-                            echo("<option value=\"" + str + "\">" + str + "</option>");
+                            echo("<option value=\"" + $str + "\">" + $str + "</option>");
                         }
                     ?>
                 </select>
