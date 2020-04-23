@@ -7,6 +7,32 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="password.css">
         <title>UTK ABET</title>
+        <script type="text/javascript">
+            function submitPassword() {
+                var newPassword = document.getElementById("newPassword").value;
+                if (document.getElementById("confirmPassword").value != newPassword) {
+                    document.getElementById("passwordError").style.display = 'block';
+                } else {
+                    sendPasswordReset();
+                }
+            }
+
+            function sendPasswordReset(password) {
+                var xhttp = new XMLHttpRequest();
+
+                var emailQuery = "email=" + encodeURIComponent($_SESSION["email"])''
+                var passwordQuery = "password=" + encodeURIComponent(newPassword);
+
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        var result = JSON.parse(this.responseText);
+                        document.getElementById("passwordError").style.display = 'none';
+                        document.getElementById("passwordSucceeded").style.display = 'block';
+                    }
+                }
+            }
+
+        </script>
     </head>
 
     <body>
@@ -25,15 +51,17 @@
             <div class="reset_box">
                 <p>Change password</p>
                 <br>
-                <label for="new_password"><b>New password</b></label>
+                <label for="newPassword"><b>New password</b></label>
                 <br>
-                <input type="text" id="new_password" value="" placeholder="New password">
+                <input type="text" id="newPassword" value="" placeholder="New password">
                 <br><br>
-                <label for="confirm_password"><b>Confirm password</b></label>
+                <label for="confirmPassword"><b>Confirm password</b></label>
                 <br>
-                <input type="text" id="confirm_password" value="" placeholder="Confirm password">
+                <input type="text" id="confirmPassword" value="" placeholder="Confirm password">
                 <br><br>
-                <button type="button" id="submit">Submit</button>
+                <button type="button" id="submit" onclick="submitPassword()">Submit</button>
+                <label for="passwordError" id="passwordError">passwords do not match--please make them match</label>
+                <label for="passwordSucceeded" id="passwordSucceeded">password changed</label>
             </div>
         </div>
     </div>
