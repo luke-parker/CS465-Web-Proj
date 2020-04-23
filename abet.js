@@ -32,7 +32,6 @@ $(document).ready(function() {
     var result;
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-         console.log(this.responseText);
          result = JSON.parse(this.responseText);
 
          if (Array.isArray(result) && result.length == 0) {
@@ -51,6 +50,6 @@ $(document).ready(function() {
       }
 
       function buildOutcomes() {
-
+        console.log("Something happpened!");
       }
 });
