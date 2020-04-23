@@ -7,7 +7,7 @@ var row = `
 `;
 
 $(document).ready(function() {
-    $(".bttn, .new").click(function() {
+    $(".bttn.new").click(function() {
         $("#assessment tr:last").after(row);
         console.log("tet")
     });
