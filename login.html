@@ -21,9 +21,8 @@
              } else {
                loginSuccess();
              }
-             // loginSuccess();
            } else {
-             // loginFail();
+             loginFail();
            }
           };
 
@@ -37,6 +36,8 @@
 
         function loginFail() {
           console.log("fail");
+          var element = document.getElementById("loginFail");
+          element.style.visibility = 'visible';
         }
 
 
