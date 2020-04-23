@@ -14,9 +14,11 @@
           xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
              console.log(this.responseText);
-             loginSuccess();
+             var result = JSON.parse(this.responseText);
+             console.log(this.textstatus);
+             // loginSuccess();
            } else {
-             loginFail();
+             // loginFail();
            }
           };
 
