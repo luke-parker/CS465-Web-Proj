@@ -11,16 +11,18 @@
 
     <body>
         <?php include "nav.php"; ?>
-        <div id="title">
-            <h1>Reset password</h1>
-        </div>
-        <div class="info_box">
-            <p>INFO</p>
+        <div id="content">
+            <div id="title">
+                <h1>Reset password</h1>
+            </div>
+            <div class="info_box">
+                <p>INFO</p>
 
-        </div>
+            </div>
 
-        <div class="reset_box">
-            <p>RESET PASSWORD</p>
+            <div class="reset_box">
+                <p>RESET PASSWORD</p>
+            </div>
         </div>
     </div>
     </body>

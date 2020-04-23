@@ -156,7 +156,7 @@ td, th{
     background-color: #c23b22;
 }
 
-.trash > img { 
+.trash > img {
     filter: invert(100%);
     margin-top: 4px;
     width:20px;
@@ -184,10 +184,10 @@ td, th{
 
 .bttn.save {
     background-color: #0E4d92;
-    border: 1px solid #07284c;   
+    border: 1px solid #07284c;
 }
 
 .bttn.new {
     background-color: #00a86b;
-    border: 1px solid #005c3a;   
+    border: 1px solid #005c3a;
 }
