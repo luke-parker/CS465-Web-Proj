@@ -32,9 +32,8 @@ input {
 
 #loginFail {
     font-size: 20px;
-    display: block;
+    display: none;
     color: red;
-    visibility: hidden;
 }
 
 * {

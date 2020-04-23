@@ -32,12 +32,12 @@
 
         function loginSuccess() {
           console.log("success");
+          document.getElementById("loginFail").style.display = none;
         }
 
         function loginFail() {
           console.log("fail");
-          var element = document.getElementById("loginFail");
-          element.style.visibility = 'visible';
+          document.getElementById("loginFail").style.display = none;
         }
 
 
