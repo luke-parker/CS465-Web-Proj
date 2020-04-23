@@ -17,13 +17,23 @@
             </div>
             <div class="info_box">
                 <p>Basic Info</p>
+                <br>
                 <label for="name"><?php echo "<b>Name:</b> " . $_SESSION["name"]; ?></label>
                 <label for="email"><?php echo "<b>Email:</b> " . $_SESSION["email"]; ?></label>
             </div>
 
             <div class="reset_box">
                 <p>Change password</p>
-                
+                <br>
+                <label for="new_password"><b>New password</b></label>
+                <br>
+                <input type="text" id="new_password" value="" placeholder="New password">
+                <br><br>
+                <label for="confirm_password"><b>Confirm password</b></label>
+                <br>
+                <input type="text" id="confirm_password" value="" placeholder="Confirm password">
+                <br><br>
+                <button type="button" id="submit">Submit</button>
             </div>
         </div>
     </div>
