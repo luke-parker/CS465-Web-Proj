@@ -15,7 +15,7 @@
             if (this.readyState == 4 && this.status == 200) {
              console.log(this.responseText);
              var result = JSON.parse(this.responseText);
-             console.log(this.textstatus);
+             console.log(result.count);
              // loginSuccess();
            } else {
              // loginFail();
