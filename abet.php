@@ -14,8 +14,15 @@
                 <span id="sec">Section:</span><br>
                 
                 <select id="#">
-                    <option value="spring 2020 COSC 402">spring 2020 COSC 402</option>
-                    <!-- content -->
+                    <!-- <option value="spring 2020 COSC 402">spring 2020 COSC 402</option> -->
+                    <?php
+                        // First, build the string up
+                        for ($i = 0; i < count($_SESSION['courses']); i++) {
+                            $row = $_SESSION['courses'][i];
+                            $str = $row['courseId'] + " " + $row['semester'] + " " + $row['year'] + " " + $row['year'];
+                            echo("<option value=\"" + str + "\">" + str + "</option>");
+                        }
+                    ?>
                 </select>
 
                 <div class="outcome first"><a href="#">Outcome 2</a></div>
@@ -31,6 +38,7 @@
                 Please enter the number of students who do not meet expectations, meet expectations, and exceed expectations. You can type directly into the boxes--you do not need to use the arrows.
                 <div class="outcome_description">
                     <?php
+                        echo(count($_SESSION['courses']));
                         // $outcomes = include "outcomes.php";
                         // for ($i = 0; $i < count($outcomes); $i++) {
                         //     echo "<span>Outcome "+$outcomes[i]['outcomeId']+" - Major: </span>";
