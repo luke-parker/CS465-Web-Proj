@@ -31,12 +31,12 @@
                 Please enter the number of students who do not meet expectations, meet expectations, and exceed expectations. You can type directly into the boxes--you do not need to use the arrows.
                 <div class="outcome_description">
                     <?php
-                        $outcomes = include "outcomes.php";
-                        for ($i = 0; $i < count($outcomes); $i++) {
-                            echo "<span>Outcome "+$outcomes[i]['outcomeId']+" - Major: </span>";
-                            echo $outcomes[i]['outcomeDescription'];
-                            echo "<br>"                            
-                        }
+                        // $outcomes = include "outcomes.php";
+                        // for ($i = 0; $i < count($outcomes); $i++) {
+                        //     echo "<span>Outcome "+$outcomes[i]['outcomeId']+" - Major: </span>";
+                        //     echo $outcomes[i]['outcomeDescription'];
+                        //     echo "<br>"                            
+                        // }
                     ?>
                     <span>Outcome # - Major: </span>Some outcome will be addressed here!
                 </div>
