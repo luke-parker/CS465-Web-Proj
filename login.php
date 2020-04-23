@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -59,6 +60,7 @@ while ($stmt->fetch()) {
   $json[] = $row;
 }
 
+$_SESSION['courses'] = $json;
 
 echo json_encode($json, JSON_PRETTY_PRINT);
 
