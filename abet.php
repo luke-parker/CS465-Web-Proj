@@ -1,7 +1,17 @@
 <?php
     session_start();
-    include "nav.php";
+    // include "nav.php";
 ?>
+<!DOCTYPE html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="abet.js"></script>
+        <link rel="stylesheet" type="text/css" href="abet.css">
+        <title>UTK ABET</title>
+    </head>
+
+    <body>
+      <?php include "nav.php"; ?>
             <div id="content">
                 <div id="results">
                 <h1>Results</h1>
@@ -13,7 +23,7 @@
                     ?>
                     <span>Outcome # - Major: </span>Some outcome will be addressed here!
                 </div>
-                
+
                 <table>
                     <tr>
                         <th>Not Meets Expectations</th>
@@ -35,13 +45,13 @@
                 </div>
                 <div id="plan">
                     <h1>Assessment Plan</h1>
-                    
+
                     <hr>
 
                     <ol>
                         <li>Please enter your assessment plan for each outcome. The weights are percentages from 0-100 and the weight should add up to 100%.</li>
-                        <li>Always press "Save Assessments" when finished, even if you removed an assessment. 
-                            The trash can only removes an assessment from this screen--it does not remove it 
+                        <li>Always press "Save Assessments" when finished, even if you removed an assessment.
+                            The trash can only removes an assessment from this screen--it does not remove it
                             from the database until you press "Save Assessments".
                         </li>
                     </ol>
@@ -50,7 +60,7 @@
                         <tr class="plan_row">
                             <th>Weight (%)</th>
                             <th>Description</th>
-                            <th>Remove</th> 
+                            <th>Remove</th>
                         </tr>
                         <tr class="plan_row">
                             <td width="5%"><input class="i" type="number" min="0" max="100" placeholder="1"></td>
@@ -80,7 +90,7 @@
                 <textarea class="i txt" placeholder="None" maxlength="2000"></textarea><br>
                 <b>Actions:</b><br>
                 <textarea class="i txt" placeholder="None" maxlength="2000"></textarea>
-                
+
                 <div class="bttn_clear" style="text-align: right">
                     <a href="#"><button class="bttn save">Save Narrative</button></a>
                 </div>
