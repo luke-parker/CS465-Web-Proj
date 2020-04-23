@@ -13,15 +13,17 @@
         <?php include "nav.php"; ?>
         <div id="content">
             <div id="title">
-                <h1>Reset password</h1>
+                <h1>Change password</h1>
             </div>
             <div class="info_box">
-                <p>INFO</p>
-
+                <p>Basic Info</p>
+                <label for="name"><?php echo "<b>Name:</b> " . $_SESSION["name"]; ?></label>
+                <label for="email"><?php echo "<b>Email:</b> " . $_SESSION["email"]; ?></label>
             </div>
 
             <div class="reset_box">
-                <p>RESET PASSWORD</p>
+                <p>Change password</p>
+                
             </div>
         </div>
     </div>
