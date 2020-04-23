@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+hr {
+    margin: 20px 0px;
+}
+
+#header {
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    border: 1px solid #D4D4D4;
+    padding: 10px;
+    height: 60px;
+    width: 100vw;
+    max-width: 100%;
+    font-size: 30px;
+    color: grey;
+    vertical-align: middle;
+}
+
+#header > img {
+    float: right;
+}
+
+#nav {
+    flex: 1 0 auto;
+    box-sizing: border-box;
+    background-color: #F5F5F5;
+    border: 1px solid #D4D4D4;
+    border-top: 0px;
+    padding: 25px 10px;
+    max-width: 200px;
+    height: calculate(100vh);
+}
+
+#nav select {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    margin: 15px 0px;
+}
+
+#nav ul {
+    list-style-type: none;
+}
+
+.outcome {
+    box-sizing: border-box;
+    border-bottom: 1px solid #D4D4D4;
+    width: 198px;
+    height: 40px;
+    margin: 0px -10px;
+    padding: 5px;
+    line-height: 30px;
+}
+
+.outcome.first {
+    border-top: 1px solid #D4D4D4;
+}
+
+#nav a{
+    text-decoration: none;
+    color: #0E4d92;
+    vertical-align: 50%;
+
+}
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#content {
+    flex: 1 0 auto;
+    display: block;
+    margin: 40px;
+    font-weight: normal;
+    font-size: 14px;
+    width: 100vh;
+}
+
+#sec {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.outcome_description {
+    box-sizing: border-box;
+    border: 1px solid #D4D4D4;
+    background-color: #F5F5F5;
+    width: 100%;
+    height: 80px;
+    border-radius: 5px;
+    margin: 20px 0px;
+    padding: 10px;
+}
+
+.outcome_description span {
+    font-weight: bold;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    border-bottom: 1px solid #D4D4D4;
+}
+
+td, th{
+    margin: 10px 0px;
+    padding: 10px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.i {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #D4D4D4;
+    padding: 5px;
+}
+
+#plan {
+    width: 100%;
+}
+
+#plan ol {
+    margin: 20px;
+}
+
+.plan_row {
+    border-bottom: 1px solid #D4D4D4;
+}
+
+.txt {
+    font-size: 14px;
+    height: 40px;
+}
+
+.trash {
+    width: 40px;
+    height:40px;
+    background-color: #c23b22;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+
+#summary > .txt {
+    margin-bottom:20px;
+    margin-top: 5px;
+    height: 60px;
+    vertical-align: top;
+}
+
+.bttn {
+    color: #FFF;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.bttn_clear {
+    width: 100%;
+    clear: both;
+}
+
+.bttn.save {
+    background-color: #0E4d92;
+    border: 1px solid #07284c;   
+}
+
+.bttn.new {
+    background-color: #00a86b;
+    border: 1px solid #005c3a;   
+}
