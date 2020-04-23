@@ -24,7 +24,7 @@
                         for ($i = 0; $i < count($_SESSION['courses']); $i++) {
                             $row = $_SESSION['courses'][$i];
                             $str = $row['courseId'] . " " . $row['semester'] . " " . $row['year'] . " " . $row['major'];
-                            echo("<option value=\"" . $str . "\">" . $str . "</option>");
+                            echo("<option value=\"" . $row['sectionId'] . "\">" . $str . "</option>");
                         }
                     ?>
                 </select>
