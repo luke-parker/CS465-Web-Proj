@@ -18,7 +18,7 @@
             <div id="nav">
                 <span id="sec">Section:</span><br>
                 
-                <select id="#select_course">
+                <select id="select_course">
                     <?php
                         // First, build the string up
                         for ($i = 0; $i < count($_SESSION['courses']); $i++) {
@@ -28,11 +28,6 @@
                         }
                     ?>
                 </select>
-
-                <?php
-                    // we need sectionId and major
-
-                ?>
 
                 <div class="outcome first"><a href="#">Outcome 2</a></div>
                 <div class="outcome"><a href="#">Outcome 3</a></div>
