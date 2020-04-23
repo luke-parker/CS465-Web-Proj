@@ -7,11 +7,6 @@ var row = `
 `;
 
 $(document).ready(function() {
-    // $(".bttn.new").click(function() {
-    //     $("#assessment tr:last").after(row);
-    //     console.log("tet")
-    // });
-
     $(".bttn.new").on("click", function() {
         $("#assessment tr:last").after(row);
     });

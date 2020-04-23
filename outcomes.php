@@ -58,4 +58,5 @@ echo json_encode($json, JSON_PRETTY_PRINT);
 $stmt->close();
 $conn->close();
 
- ?>
+return $json;
+?>
