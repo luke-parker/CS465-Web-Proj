@@ -3,7 +3,7 @@
         <link rel="stylesheet" type="text/css" href="login.css">
         <script type="text/javascript">
 
-        function login() {
+        function performLogin() {
           var xhttp = new XMLHttpRequest();
           var email = document.getElementById("email").value;
           var password = document.getElementById("password").value;
@@ -50,7 +50,7 @@
                 <input type="password" id="password" placeholder="  Password">
             </div>
             <div>
-                <button id="login" type="button" onclick="login()">Login</button>
+                <button id="login" type="button" onclick="performLogin()">Login</button>
             </div>
         </form>
     </body>
