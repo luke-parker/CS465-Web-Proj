@@ -1,6 +1,39 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="login.css">
+        <script type="text/javascript">
+
+        function login() {
+          var xhttp = new XMLHttpRequest();
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+
+          var emailQuery = "email=" + encodeURIComponent(email);
+          var passwordQuery = "password=" + encodeURIComponent(password);
+
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+             console.log(this.responseText);
+             loginSuccess();
+           } else {
+             loginFail();
+           }
+          };
+
+          xhttp.open("GET", "login.php?" + emailQuery + "&" + passwordQuery);
+          xhttp.send(null);
+        }
+
+        function loginSuccess() {
+          console.log("success");
+        }
+
+        function loginFail() {
+          console.log("fail");
+        }
+
+
+        </script>
     </head>
     <body>
         <div id="sign-in">
@@ -8,13 +41,16 @@
         </div>
         <form>
             <div>
-                <input type="email" placeholder="  E-mail">
+                <label for="loginFail" id="loginFail">LOGIN FAILED</label>
             </div>
             <div>
-                <input type="password" placeholder="  Password">
+                <input type="email" id="email" placeholder="  E-mail">
             </div>
             <div>
-                <input id="bttn" type="submit" value="login">
+                <input type="password" id="password" placeholder="  Password">
+            </div>
+            <div>
+                <button id="login" type="button" onclick="login()">Login</button>
             </div>
         </form>
     </body>
