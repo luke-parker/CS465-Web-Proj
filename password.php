@@ -3,23 +3,26 @@
     // include "nav.php";
 ?>
 <!DOCTYPE html>
-  <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <script src="abet.js"></script>
-      <link rel="stylesheet" type="text/css" href="abet.css">
-      <title>UTK ABET</title>
-  </head>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="password.css">
+        <title>UTK ABET</title>
+    </head>
 
-  <body>
-    <?php include "nav.php"; ?>
-      <div class="info_box">
+    <body>
+        <?php include "nav.php"; ?>
+        <div id="title">
+            <h1>Reset password</h1>
+        </div>
+        <div class="info_box">
+            <p>INFO</p>
 
-      </div>
+        </div>
 
-      <div class="reset_box">
-
-      </div>
+        <div class="reset_box">
+            <p>RESET PASSWORD</p>
+        </div>
     </div>
-  </body>
+    </body>
 
 </html>
