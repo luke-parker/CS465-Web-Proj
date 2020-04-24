@@ -33,6 +33,8 @@
                             var result = JSON.parse(this.responseText);
                             document.getElementById("passwordError").style.display = 'none';
                             document.getElementById("passwordSucceeded").style.display = 'block';
+                        } else {
+                            console.log("error resetting password");
                         }
                     }
                 }
