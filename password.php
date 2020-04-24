@@ -1,7 +1,7 @@
 <?php
     session_start();
-    $_SESSION["name"] = "bvanderz@utk.edu";
-    $_SESSION["email"] = "bvanderz@utk.edu";
+    $_SESSION["name"] = "Brad Vander Zanden";
+    // $_SESSION["email"] = "bvanderz@utk.edu";
     // include "nav.php";
 ?>
 <!DOCTYPE html>

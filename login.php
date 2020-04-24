@@ -61,6 +61,7 @@
   }
 
   $_SESSION['courses'] = $json;
+  $_SESSION['email'] = $_GET['email'];
 
   echo json_encode($json, JSON_PRETTY_PRINT);
 
