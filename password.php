@@ -9,6 +9,7 @@
         <title>UTK ABET</title>
         <script type="text/javascript">
             $(document).ready(function() {
+                document.getElementById("passwordError").style.display = 'none';
                 document.getElementById("submit").onclick = function() {
                     console.log("submitting password");
                     var newPassword = document.getElementById("newPassword").value;
