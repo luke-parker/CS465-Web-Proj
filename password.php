@@ -17,7 +17,7 @@
                     if (document.getElementById("confirmPassword").value != newPassword) {
                         document.getElementById("passwordError").style.display = 'block';
                     } else {
-                        sendPasswordReset();
+                        sendPasswordReset(newPassword);
                     }
                 };
 
