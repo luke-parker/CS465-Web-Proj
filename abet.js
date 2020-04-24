@@ -42,6 +42,7 @@ $(document).ready(function() {
             console.log(outcome + "\n\n\n")
             for (pair in outcome) {
                 console.log(typeof pair);
+                console.log(pair)
                 console.log(typeof pair.outcomeId);
                 console.log(typeof pair.outcomeDescription)
                 console.log(pair.outcomeId)
