@@ -8,7 +8,9 @@
         <link rel="stylesheet" type="text/css" href="password.css">
         <title>UTK ABET</title>
         <script type="text/javascript">
+
             function submitPassword() {
+                console.log("submitting password");
                 var newPassword = document.getElementById("newPassword").value;
                 if (document.getElementById("confirmPassword").value != newPassword) {
                     document.getElementById("passwordError").style.display = 'block';
