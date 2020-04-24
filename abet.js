@@ -34,10 +34,11 @@ $(document).ready(function() {
         xhttp.send(null);
     }
 
+    var outcome;
       function buildOutcomes() {
         if (this.status === 200) {
-            var outcome = this.response;
-            console.log("Something happpened!");
+            outcome = this.response;
+
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
         }
