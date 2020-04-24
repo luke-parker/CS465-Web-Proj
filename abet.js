@@ -40,9 +40,9 @@ $(document).ready(function() {
         if (this.status === 200) {
             var outcome = this.response;
 
-            for (var i = outcome.length-1; i >= 0; i++) {
+            for (var i = outcome.length-1; i >= 0; i--) {
                 var t = outcome[i]
-                
+
                 // add top border on the first element
                 if (i == outcome.length-1) {
                     $("#select_course").after(firstline.replace("##", t.outcomeId));
