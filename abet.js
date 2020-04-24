@@ -40,13 +40,18 @@ $(document).ready(function() {
             outcome = this.response;
             console.log(typeof outcome);
             console.log(outcome + "\n\n\n")
-            for (pair in outcome) {
-                console.log(typeof pair);
-                console.log(pair)
-                console.log(typeof pair.outcomeId);
-                console.log(typeof pair.outcomeDescription)
-                console.log(pair.outcomeId)
-                console.log(pair.outcomeDescription)
+
+            // for (pair in outcome) {
+            //     console.log(typeof pair);
+            //     console.log(pair)
+            //     console.log(typeof pair.outcomeId);
+            //     console.log(typeof pair.outcomeDescription)
+            //     console.log(pair.outcomeId)
+            //     console.log(pair.outcomeDescription)
+            // }
+            for (var i = 0; i < outcome.length; i++) {
+                console.log(outcome[i])
+                console.log(typeof outcome[i])
             }
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
