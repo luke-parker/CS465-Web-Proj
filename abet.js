@@ -38,7 +38,10 @@ $(document).ready(function() {
       function buildOutcomes() {
         if (this.status === 200) {
             outcome = this.response;
-
+            for (pair in outcome) {
+                console.log(pair.outcomeId)
+                console.log(pair.outcomeDescription)
+            }
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
         }
