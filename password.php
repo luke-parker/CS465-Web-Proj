@@ -23,7 +23,7 @@
                 function sendPasswordReset(password) {
                     var xhttp = new XMLHttpRequest();
 
-                    var emailQuery = "email=" + encodeURIComponent($_SESSION["email"]);
+                    var emailQuery = "email=" + encodeURIComponent(<?php echo $_SESSION["email"]; ?>);
                     var passwordQuery = "password=" + encodeURIComponent(newPassword);
 
                     xhttp.onreadystatechange = function() {
