@@ -53,6 +53,8 @@ $(document).ready(function() {
                     $(".outcome.first").after(newline.replace(/#/g, t.outcomeId));
                 }
             }
+
+            window.location.href = "abet.php?outcome=" + outcome[0].outcomeId;
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
         }
