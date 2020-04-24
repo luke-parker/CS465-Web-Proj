@@ -36,14 +36,18 @@ $(document).ready(function() {
 
       function buildOutcomes() {
         var newline = "<div class=\"outcome\"><a href=\"#\">Outcome ##</a></div>";
+        var firstline = "<div class=\"outcome first\"><a href=\"#\">Outcome ##</a></div>"
         if (this.status === 200) {
             var outcome = this.response;
 
-            for (var i = 0; i < outcome.length; i++) {
+            for (var i = outcome.length-1; i >= 0; i++) {
                 var t = outcome[i]
-                // console.log(t.outcomeId)
-                // console.log(t.outcomeDescription)
-                if (i == 0) {newline = newline.replace("\"outcome\"", "\"outcome first\""); }
+                
+                // add top border on the first element
+                if (i == outcome.length-1) {
+                    $("#select_course").after(firstline.replace("##", t.outcomeId));
+                }
+
                 $("#select_course").after(newline.replace("##", t.outcomeId));
             }
         } else {
