@@ -9,7 +9,7 @@
         <title>UTK ABET</title>
         <script type="text/javascript">
 
-            function submitPassword() {
+            document.getElementById("submit").onclick = function() {
                 console.log("submitting password");
                 var newPassword = document.getElementById("newPassword").value;
                 if (document.getElementById("confirmPassword").value != newPassword) {
@@ -61,7 +61,7 @@
                 <br>
                 <input type="text" id="confirmPassword" value="" placeholder="Confirm password">
                 <br><br>
-                <button type="button" id="submit" onclick="submitPassword()">Submit</button>
+                <button type="button" id="submit" >Submit</button>
                 <label for="passwordError" id="passwordError">passwords do not match--please make them match</label>
                 <label for="passwordSucceeded" id="passwordSucceeded">password changed</label>
             </div>
