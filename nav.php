@@ -22,9 +22,4 @@
                         }
                     ?>
                 </select>
-
-                <div class="outcome first"><a href="#">Outcome 2</a></div>
-                <div class="outcome"><a href="#">Outcome 3</a></div>
-                <div class="outcome"><a href="#">Outcome 5</a></div>
-                <div class="outcome"><a href="#">Outcome 6</a></div>
             </div>
