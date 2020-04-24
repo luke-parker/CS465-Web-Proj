@@ -34,27 +34,17 @@ $(document).ready(function() {
         xhttp.send(null);
     }
 
-    var outcome;
       function buildOutcomes() {
+        var newline = "<div class=\"outcome\"><a href=\"#\">Outcome ##</a></div>";
         if (this.status === 200) {
-            outcome = this.response;
-            console.log(typeof outcome);
-            console.log(outcome + "\n\n\n")
+            var outcome = this.response;
 
-            // for (pair in outcome) {
-            //     console.log(typeof pair);
-            //     console.log(pair)
-            //     console.log(typeof pair.outcomeId);
-            //     console.log(typeof pair.outcomeDescription)
-            //     console.log(pair.outcomeId)
-            //     console.log(pair.outcomeDescription)
-            // }
             for (var i = 0; i < outcome.length; i++) {
-                console.log(outcome[i])
-                console.log(typeof outcome[i])
                 var t = outcome[i]
-                console.log(t.outcomeId)
-                console.log(t.outcomeDescription)
+                // console.log(t.outcomeId)
+                // console.log(t.outcomeDescription)
+
+                $("#select_course").after(newline.replace("##", t.outcomeId));
             }
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
