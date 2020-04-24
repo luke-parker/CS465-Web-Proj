@@ -38,8 +38,12 @@ $(document).ready(function() {
       function buildOutcomes() {
         if (this.status === 200) {
             outcome = this.response;
+            console.log(typeof outcome);
             console.log(outcome + "\n\n\n")
             for (pair in outcome) {
+                console.log(typeof pair);
+                console.log(typeof pair.outcomeId);
+                console.log(typeof pair.outcomeDescription)
                 console.log(pair.outcomeId)
                 console.log(pair.outcomeDescription)
             }
