@@ -36,7 +36,10 @@
                         } else {
                             console.log("error resetting password");
                         }
-                    }
+                    };
+
+                    xhttp.open("GET", "updatePassword.php?" + emailQuery + "&" + passwordQuery);
+                    xhttp.send(null);
                 }
             });
 
