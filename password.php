@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="password.css">
         <title>UTK ABET</title>
         <script type="text/javascript">
-            init() {
+            $(document).ready(function() {
                 document.getElementById("submit").onclick = function() {
                     console.log("submitting password");
                     var newPassword = document.getElementById("newPassword").value;
@@ -18,28 +18,24 @@
                         sendPasswordReset();
                     }
                 };
-            }
 
-            function sendPasswordReset(password) {
-                var xhttp = new XMLHttpRequest();
 
-                var emailQuery = "email=" + encodeURIComponent($_SESSION["email"]);
-                var passwordQuery = "password=" + encodeURIComponent(newPassword);
+                function sendPasswordReset(password) {
+                    var xhttp = new XMLHttpRequest();
 
-                xhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        var result = JSON.parse(this.responseText);
-                        document.getElementById("passwordError").style.display = 'none';
-                        document.getElementById("passwordSucceeded").style.display = 'block';
+                    var emailQuery = "email=" + encodeURIComponent($_SESSION["email"]);
+                    var passwordQuery = "password=" + encodeURIComponent(newPassword);
+
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                            var result = JSON.parse(this.responseText);
+                            document.getElementById("passwordError").style.display = 'none';
+                            document.getElementById("passwordSucceeded").style.display = 'block';
+                        }
                     }
                 }
-            }
-
-            document.addEventListener('readystatechange', function() {
-                if (document.readyState === "complete") {
-                  init();
-                }
             });
+
         </script>
     </head>
 
