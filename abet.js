@@ -54,7 +54,6 @@ $(document).ready(function() {
                 }
             }
 
-            // window.location.replace("abet.php?outcome=" + outcome[0].outcomeId);
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
         }
@@ -62,6 +61,8 @@ $(document).ready(function() {
 
     // Fetch the outcomes using an ajax query
     // this could be wrapped in an on select function
-    $("#select_course").change(fetchOutcomes);
+    $("#select_course").change(fetchOutcomes).change(function() {
+        window.location.replace("abet.php?outcome=" + outcome[0].outcomeId);
+    });
     fetchOutcomes();
 });
