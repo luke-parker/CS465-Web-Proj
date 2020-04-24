@@ -32,7 +32,6 @@
 
                     xhttp.onreadystatechange = function() {
                         if (this.readyState == 4 && this.status == 200) {
-                            var result = JSON.parse(this.responseText);
                             document.getElementById("passwordError").style.display = 'none';
                             document.getElementById("passwordSucceeded").style.display = 'block';
                         }
