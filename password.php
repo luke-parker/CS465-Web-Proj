@@ -17,7 +17,7 @@
                 } else {
                     sendPasswordReset();
                 }
-            }
+            };
 
             function sendPasswordReset(password) {
                 var xhttp = new XMLHttpRequest();
