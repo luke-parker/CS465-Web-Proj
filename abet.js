@@ -46,5 +46,5 @@ $(document).ready(function() {
     // Fetch the outcomes using an ajax query
     // this could be wrapped in an on select function
     $("#select_course").click(fetchOutcomes);
-
+    fetchOutcomes();
 });
