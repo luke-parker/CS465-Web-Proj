@@ -15,6 +15,16 @@ $(document).ready(function() {
         $(this).closest(".plan_row").remove();
     });
 
+    // When an outcome is clicked, populate that outcome's information
+    $(document).on("click", ".outcome", function() {
+        console.log("Outcome switched to " + outcomeId);
+
+        // Pass the outcome ID to the following Ajax queries.
+        populateResults();
+        populateAssessments();
+        populateSummaries();
+    });
+
     var fetchOutcomes = function() {
         var xhttp = new XMLHttpRequest();
 
@@ -62,7 +72,7 @@ $(document).ready(function() {
     // Fetch the outcomes using an ajax query
     // this could be wrapped in an on select function
     $("#select_course").change(fetchOutcomes).change(function() {
-        // window.location.replace("abet.php?outcome=" + $(".outcome.first").text().replace("Outcome ", ""));
+        // populate the zeroth outcome's data
     });
     fetchOutcomes();
 });
