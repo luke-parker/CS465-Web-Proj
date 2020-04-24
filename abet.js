@@ -32,6 +32,9 @@ $(document).ready(function() {
 
         xhttp.open("GET", "outcomes.php?" + sectionIdQuery + "&" + majorQuery);
         xhttp.send(null);
+
+        // Remove old outcome list, if there are any there
+        $(".outcome").remove();
     }
 
       function buildOutcomes() {
@@ -46,9 +49,9 @@ $(document).ready(function() {
                 // add top border on the first element
                 if (i == outcome.length-1) {
                     $("#select_course").after(firstline.replace("##", t.outcomeId));
+                } else {
+                    $("#select_course").after(newline.replace("##", t.outcomeId));
                 }
-
-                $("#select_course").after(newline.replace("##", t.outcomeId));
             }
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
