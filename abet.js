@@ -54,7 +54,7 @@ $(document).ready(function() {
                 }
             }
 
-            window.location.replace("abet.php?outcome=" + outcome[0].outcomeId);
+            // window.location.replace("abet.php?outcome=" + outcome[0].outcomeId);
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
         }
