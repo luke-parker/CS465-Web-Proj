@@ -48,9 +48,9 @@ $(document).ready(function() {
 
                 // add top border on the first element
                 if (i == 0) {
-                    $("#select_course").after(firstline.replace("#", t.outcomeId));
+                    $("#select_course").after(firstline.replace(/#/g, t.outcomeId));
                 } else {
-                    $(".outcome.first").after(newline.replace("#", t.outcomeId));
+                    $(".outcome.first").after(newline.replace(/#/g, t.outcomeId));
                 }
             }
         } else {
