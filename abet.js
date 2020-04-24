@@ -52,7 +52,7 @@ $(document).ready(function() {
             for (var i = 0; i < outcome.length; i++) {
                 console.log(outcome[i])
                 console.log(typeof outcome[i])
-                var t = JSON.parse(outcome[i])
+                var t = outcome[i]
                 console.log(t.outcomeId)
                 console.log(t.outcomeDescription)
             }
