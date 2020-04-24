@@ -8,15 +8,17 @@
         <link rel="stylesheet" type="text/css" href="password.css">
         <title>UTK ABET</title>
         <script type="text/javascript">
-            document.getElementById("submit").onclick = function() {
-                console.log("submitting password");
-                var newPassword = document.getElementById("newPassword").value;
-                if (document.getElementById("confirmPassword").value != newPassword) {
-                    document.getElementById("passwordError").style.display = 'block';
-                } else {
-                    sendPasswordReset();
-                }
-            };
+            init() {
+                document.getElementById("submit").onclick = function() {
+                    console.log("submitting password");
+                    var newPassword = document.getElementById("newPassword").value;
+                    if (document.getElementById("confirmPassword").value != newPassword) {
+                        document.getElementById("passwordError").style.display = 'block';
+                    } else {
+                        sendPasswordReset();
+                    }
+                };
+            }
 
             function sendPasswordReset(password) {
                 var xhttp = new XMLHttpRequest();
@@ -32,6 +34,12 @@
                     }
                 }
             }
+
+            document.addEventListener('readystatechange', function() {
+                if (document.readyState === "complete") {
+                  init();
+                }
+            });
         </script>
     </head>
 
