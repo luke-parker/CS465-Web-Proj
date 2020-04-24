@@ -43,7 +43,7 @@ $(document).ready(function() {
                 var t = outcome[i]
                 // console.log(t.outcomeId)
                 // console.log(t.outcomeDescription)
-
+                if (i == 0) {newline = newline.replace("\"outcome\"", "\"outcome first\""); }
                 $("#select_course").after(newline.replace("##", t.outcomeId));
             }
         } else {
