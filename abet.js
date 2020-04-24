@@ -15,41 +15,36 @@ $(document).ready(function() {
         $(this).closest(".plan_row").remove();
     });
 
-    // Fetch the outcomes using an ajax query
-    // this could be wrapped in an on select function
-    var xhttp = new XMLHttpRequest();
+    var fetchOutcomes = function() {
+        var xhttp = new XMLHttpRequest();
 
-    var selected = $("#select_course option:selected");
-    var text = selected.text();
-    var sectionId = selected.val();
-    var major = text.substr(text.lastIndexOf(" ")+1, text.length);
+        var selected = $("#select_course option:selected");
+        var text = selected.text();
+        var sectionId = selected.val();
+        var major = text.substr(text.lastIndexOf(" ")+1, text.length);
 
-    // now encoded them for the query
-    var sectionIdQuery = "sectionId="+encodeURIComponent(sectionId);
-    var majorQuery = "major="+encodeURIComponent(major);
+        // now encoded them for the query
+        var sectionIdQuery = "sectionId="+encodeURIComponent(sectionId);
+        var majorQuery = "major="+encodeURIComponent(major);
 
-    xhttp.responseType = "json";
-    var result;
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-         result = JSON.parse(this.responseText);
+        xhttp.addEventListener("load", buildOutcomes);
+        xhttp.responseType = "json";
 
-         if (Array.isArray(result) && result.length == 0) {
-           fail();
-         } else {
-           buildOutcomes();
-         }
-       }
-      };
-
-      xhttp.open("GET", "outcomes.php?" + sectionIdQuery + "&" + majorQuery);
-      xhttp.send(null);
-
-      function fail() {
-          console.log("A CRITICAL ERROR HAS OCCURED!");
-      }
+        xhttp.open("GET", "outcomes.php?" + sectionIdQuery + "&" + majorQuery);
+        xhttp.send(null);
+    }
 
       function buildOutcomes() {
-        console.log("Something happpened!");
+        if (this.status === 200) {
+            var outcome = this.response;
+            console.log("Something happpened!");
+        } else {
+            console.log("A CRITICAL ERROR HAS OCCURED!");
+        }
       }
+
+    // Fetch the outcomes using an ajax query
+    // this could be wrapped in an on select function
+    $("#select_course").click(fetchOutcomes);
+
 });
