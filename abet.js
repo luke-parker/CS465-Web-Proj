@@ -8,42 +8,29 @@ var row = `
 `;
 
 var populateResults = function(paramString) {
-    var results;
-    console.log("In populateResults()")
-    console.log(paramString)
     var xhttp = new XMLHttpRequest();
 
     xhttp.addEventListener("load", function() {
-        console.log("In results!")
         if (this.status === 200) {
-            var outcome = this.response;
+            var data = this.response;
             console.log("received good data!");
-            console.log(outcome)
+            console.log(data)
 
             // Expect back 'description' and 'numberOfStudents'
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i].description);
+                console.log(data[i].numberOfStudents);
+                
+            }
         } else {
             console.log("ERROR IN RESULTS QUERY")
         }
     });
+
     xhttp.responseType = "json";
 
     xhttp.open("GET", "results.php?" + paramString);
     xhttp.send(null);
-
-    console.log("Fetching results.")
-
-    results = function() {
-        console.log("In results!")
-        if (this.status === 200) {
-            var outcome = this.response;
-            console.log("received good data!");
-            console.log(outcome)
-
-            // Expect back 'description' and 'numberOfStudents'
-        } else {
-            console.log("ERROR IN RESULTS QUERY")
-        }
-    }
 };
 
 var populateAssessments = function() {
@@ -86,7 +73,6 @@ $(document).ready(function() {
         var paramString = jQuery.param(params);
 
         // Pass the outcome ID to the following Ajax queries.
-        console.log("Running populateResults()")
         populateResults(paramString);
         populateAssessments(paramString);
         populateSummaries(paramString);
