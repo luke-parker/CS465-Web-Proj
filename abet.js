@@ -42,6 +42,7 @@ var populateAssessments = function(paramString) {
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
             var data = this.response;
+            console.log("Got data of length: " + data.length)
             // Get assessmentDescription and weight
             for (var i = 0; i < data.length; i++) {
                 $("assessment").append(row);
