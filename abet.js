@@ -71,9 +71,9 @@ var populateSummaries = function(paramString) {
         if (this.status === 200) {
             var data = this.response;
             
-            if (data.length == 0 || data.length == null) {
+            if (data.length == 0) {
                 for (var i = 0; i < 3; i++) {
-                    $("#summary textarea").eq(i).val(null);
+                    $("#summary textarea").eq(i).empty();
                 }
             } else {
                 // Get strengths, weaknesses, and actions
