@@ -8,6 +8,7 @@ var row = `
 `;
 
 var populateResults = function(paramString) {
+    var results;
     console.log("In populateResults()")
     console.log(paramString)
     var xhttp = new XMLHttpRequest();
@@ -20,7 +21,7 @@ var populateResults = function(paramString) {
 
     console.log("Fetching results.")
 
-    var results = function() {
+    results = function() {
         console.log("In results!")
         if (this.status === 200) {
             var outcome = this.response;
