@@ -8,6 +8,8 @@ var row = `
 `;
 
 var populateResults = function(paramString) {
+    console.log("In populateResults()")
+    console.log(paramString)
     var xhttp = new XMLHttpRequest();
 
     xhttp.addEventListener("load", results);
@@ -67,6 +69,7 @@ $(document).ready(function() {
         var paramString = jQuery.param(params);
 
         // Pass the outcome ID to the following Ajax queries.
+        console.log("Running populateResults()")
         populateResults(paramString);
         populateAssessments(paramString);
         populateSummaries(paramString);
