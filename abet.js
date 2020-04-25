@@ -8,6 +8,7 @@ var row = `
 
 $(document).ready(function() {
     var selectedOutcomeId = 0;
+    var outcomeMap = [];
 
     $(".bttn.new").on("click", function() {
         $("#assessment tr:last").after(row);
@@ -50,8 +51,10 @@ $(document).ready(function() {
         if (this.status === 200) {
             var outcome = this.response;
 
+            outcomeMap = [];
             for (var i = 0; i < outcome.length; i++) {
                 var t = outcome[i]
+                outcomeMap.push[t.outcomeId];
 
                 // add top border on the first element
                 if (i == 0) {
@@ -65,8 +68,8 @@ $(document).ready(function() {
             for (i = 0; i < outcomeLabels.length; i++) {
                 outcomeLabels[i].onclick = function() {
                     console.log("outcome clicked");
-                    selectedOutcomeId = outcomeLabels[i].text();
-                    console.log("Outcome switched to " + selectedOutcomeId);
+                    // selectedOutcomeId = outcomeLabels[i].text();
+                    console.log("Outcome switched to " + outcomeMap[i]);
 
                     // Pass the outcome ID to the following Ajax queries.
                     // populateResults();
