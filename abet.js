@@ -1,4 +1,5 @@
 var selectedOutcomeId = 0;
+var outcomeMap = {};
 var row = `
 <tr class="plan_row">
     <td width="5%"><input class="i" type="number" min="0" max="100" placeholder="1"></td>
@@ -7,7 +8,7 @@ var row = `
 </tr>
 `;
 
-var populateResults = function(paramString) {
+var populateResults = function(outcomeId, paramString) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.addEventListener("load", function() {
@@ -20,10 +21,11 @@ var populateResults = function(paramString) {
             for (var i = 0; i < data.length; i++) {
                 console.log(data[i].description);
                 console.log(data[i].numberOfStudents);
-                
+
+                console.log(outcomeMap[outcomeId]);
             }
         } else {
-            console.log("ERROR IN RESULTS QUERY")
+            console.log("ERROR IN RESULTS QUERY RESPONSE")
         }
     });
 
@@ -42,8 +44,6 @@ var populateSummaries = function() {
 };
 
 $(document).ready(function() {
-    var outcomeMap = [];
-
     $(".bttn.new").on("click", function() {
         $("#assessment tr:last").after(row);
     });
@@ -73,7 +73,7 @@ $(document).ready(function() {
         var paramString = jQuery.param(params);
 
         // Pass the outcome ID to the following Ajax queries.
-        populateResults(paramString);
+        populateResults(outcomeId, paramString);
         populateAssessments(paramString);
         populateSummaries(paramString);
     });
@@ -109,7 +109,7 @@ $(document).ready(function() {
             outcomeMap = [];
             for (var i = 0; i < outcome.length; i++) {
                 var t = outcome[i]
-                outcomeMap.push[t.outcomeId];
+                outcomeMap[t.outcomeId] = t.outcomeDescription
 
                 // add top border on the first element
                 if (i == 0) {
