@@ -18,12 +18,12 @@ var populateResults = function(outcomeId, major, paramString) {
             $(".outcome_description").append("<b>Outcome " + outcomeId + " - " + major + ": </b>");
             $(".outcome_description").append("<span>" + outcomeMap[outcomeId] + "</span>");
 
-            if (data.length == 0) return;
+            if (data.length == 0) zeroResults();
             // Expect back 'description' and 'numberOfStudents'
             $("td input").eq(0).val(data[0].numberOfStudents);
             $("td input").eq(1).val(data[1].numberOfStudents);
             $("td input").eq(2).val(data[2].numberOfStudents);
-            $("td").eq(3).html(data[0].numberOfStudents + data[1].numberOfStudents + data[2].numberOfStudents)
+            // $("td").eq(3).html(data[0].numberOfStudents + data[1].numberOfStudents + data[2].numberOfStudents)
 
         } else {
             console.log("ERROR IN RESULTS QUERY RESPONSE")
@@ -36,15 +36,45 @@ var populateResults = function(outcomeId, major, paramString) {
     xhttp.send(null);
 };
 
-var populateAssessments = function() {
+var populateAssessments = function(paramString) {
     var xhttp = new XMLHttpRequest();
+
+    xhttp.addEventListener("load", function() {
+        if (this.status === 200) {
+            var data = this.response;
+            console.log("Got data of length: " + data.length)
+            // Get assessmentDescription and weight
+            for (var i = 0; i < data.length; i++) {
+                $("assessment").append(row);
+                $(".plan_row:last .i:first").val(data[i].weight);
+                $(".plan_row:last .i.txt").val(data[i].assessmentDescription);
+            }
+        } else {
+            console.log("ERROR IN ASSESSMENT QUERY RESPONSE")
+        }
+    });
+    
+    xhttp.responseType = "json";
+    
+    xhttp.open("GET", "assessment.php?" + paramString);
+    xhttp.send(null);
 };
 
 var populateSummaries = function() {
     var xhttp = new XMLHttpRequest();
 };
 
+var zeroResults = function() {
+    var sum = 0;
+    for (var i = 0; i < 3; i++) {
+        sum += $("td input").eq(i).val();
+    }
+    $("td").eq(3).html(sum);
+};
+
 $(document).ready(function() {
+    $("td input").on("change", zeroResults);
+
     $(".bttn.new").on("click", function() {
         $("#assessment tr:last").after(row);
     });
