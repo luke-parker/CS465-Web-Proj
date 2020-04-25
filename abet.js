@@ -102,8 +102,8 @@ $(document).ready(function() {
     }
 
       function buildOutcomes() {
-        var newline = "<div class=\"outcome\"><label id=\"outcome_">Outcome #</label></div>";
-        var firstline = "<div class=\"outcome first\"><label id=\"outcome_">Outcome #</a></div>"
+        var newline = "<div class=\"outcome\"><label id=\"outcome_\">Outcome #</label></div>";
+        var firstline = "<div class=\"outcome first\"><label id=\"outcome_\">Outcome #</a></div>";
         if (this.status === 200) {
             var outcome = this.response;
 
