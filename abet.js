@@ -1,3 +1,4 @@
+var selectedOutcomeId = 0;
 var row = `
 <tr class="plan_row">
     <td width="5%"><input class="i" type="number" min="0" max="100" placeholder="1"></td>
@@ -6,8 +7,28 @@ var row = `
 </tr>
 `;
 
+var populateResults = function() {
+    var xhttp = new XMLHttpRequest();
+
+    // Grab outcomeId, sectionId, and major
+    var outcomeId = selectedOutcomeId;
+    var sectionString = $("#select_course option:selected").text();
+    console.log("Got section: " + sectionString)
+    var major = sectionString.substr(sectionString.lastIndexOf(" "), sectionString.length);
+    console.log("Got major: " + major);
+    var sectionId = $("select_course option:selected").val();
+    console.log("Got sectionId: " + sectionId;)
+};
+
+var populateAssessments = function() {
+    var xhttp = new XMLHttpRequest();
+};
+
+var populateSummaries = function() {
+    var xhttp = new XMLHttpRequest();
+};
+
 $(document).ready(function() {
-    var selectedOutcomeId = 0;
     var outcomeMap = [];
 
     $(".bttn.new").on("click", function() {
