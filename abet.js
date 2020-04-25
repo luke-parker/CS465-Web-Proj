@@ -11,7 +11,7 @@ var row = `
 
 var populateResults = function(outcomeId, major, paramString) {
     var xhttp = new XMLHttpRequest();
-
+    console.log(paramString)
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
             var data = this.response;
@@ -20,6 +20,7 @@ var populateResults = function(outcomeId, major, paramString) {
             $(".outcome_description").append("<span>" + outcomeMap[outcomeId] + "</span>");
 
             if (data.length == 0) {
+                console.log("No data left :(")
                 for (var i = 0; i < 3; i++) {
                     $("td input").eq(i).val(0);
                 }
