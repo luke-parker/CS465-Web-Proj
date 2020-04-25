@@ -75,6 +75,7 @@ var populateSummaries = function(paramString) {
             var data = this.response;
             
             if (data == null || data.length == 0) {
+                console.log("Wiping out old summaries")
                 for (var i = 0; i < 3; i++) {
                     $("#summary textarea").eq(i).empty();
                 }
@@ -122,9 +123,9 @@ var saveResults = function() {
 };
 
 var saveAssessments = function() {
-    // var local_params = params;
-    // local_params["assessmentId"] = assessmentId;
-    // assessmentId++;
+    var local_params = params;
+    local_params["assessmentId"] = assessmentId;
+    assessmentId++;
     // local_params["assessmentDescription"] = ;
     // local_params["weight"] = ;
     // $(".plan_row:last .i:first").val();
@@ -145,7 +146,7 @@ var saveNarrative = function() {
         if (this.status === 200) {
             console.log("Save successful!")
         } else {
-            console.log("ERROR IN SAVING RESULTS!")
+            console.log("ERROR IN SAVING NARRATIVE!")
         }
     });
         
