@@ -20,10 +20,14 @@ var populateResults = function(outcomeId, major, paramString) {
 
 
             // Expect back 'description' and 'numberOfStudents'
+            $(".i input :first").val(data[0].numberOfStudents);
+            $(".i input :nth-child(2)").val(data[1].numberOfStudents);
+            $(".i input :nth-child(3)").val(data[2].numberOfStudents);
+            $("#results td :nth-child(4)").html(data[0].numberOfStudents + data[1].numberOfStudents + data[2].numberOfStudents)
             for (var i = 0; i < data.length; i++) {
                 console.log(data[i].description);
                 console.log(data[i].numberOfStudents);
-                
+
             }
         } else {
             console.log("ERROR IN RESULTS QUERY RESPONSE")

@@ -1,6 +1,10 @@
 <?php
     session_start();
     // include "nav.php";
+    if (count($_SESSION['courses']) == 0) {
+        header("Location: login.html");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
     <head>
@@ -17,12 +21,7 @@
                 <h1>Results</h1>
                 <hr>
                 Please enter the number of students who do not meet expectations, meet expectations, and exceed expectations. You can type directly into the boxes--you do not need to use the arrows.
-                <div class="outcome_description">
-                    <?php
-                        echo(count($_SESSION['courses']));
-                    ?>
-                    <b>Outcome # - Major: </b><span>Some outcome will be addressed here!</span>
-                </div>
+                <div class="outcome_description"></div>
 
                 <table>
                     <tr>
