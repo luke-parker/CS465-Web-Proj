@@ -64,8 +64,31 @@ var populateAssessments = function(paramString) {
     xhttp.send(null);
 };
 
-var populateSummaries = function() {
+var populateAssessments = function(paramString) {
     var xhttp = new XMLHttpRequest();
+
+    xhttp.addEventListener("load", function() {
+        if (this.status === 200) {
+            var data = this.response;
+
+            if (data.length == 0) {
+                for (var i = 0; i < 3; i++) {
+                    $("#summary textarea").eq(i).val(null);
+                }
+            }
+            // Get strengths, weaknesses, and actions
+            $("#summary textarea").eq(0).val(data.strengths);
+            $("#summary textarea").eq(1).val(data.weaknesses);
+            $("#summary textarea").eq(2).val(data.actions);
+        } else {
+            console.log("ERROR IN NARRATIVE QUERY RESPONSE")
+        }
+    });
+    
+    xhttp.responseType = "json";
+    
+    xhttp.open("GET", "narrative.php?" + paramString);
+    xhttp.send(null);
 };
 
 var sumResults = function() {
