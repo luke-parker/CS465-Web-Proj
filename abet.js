@@ -71,17 +71,16 @@ var populateSummaries = function(paramString) {
         if (this.status === 200) {
             var data = this.response;
             
-            console.log("Got data of length: " + data.length)
-            console.log(data)
             if (data.length == 0) {
                 for (var i = 0; i < 3; i++) {
                     $("#summary textarea").eq(i).val(null);
                 }
+            } else {
+                // Get strengths, weaknesses, and actions
+                $("#summary textarea").eq(0).val(data.strengths);
+                $("#summary textarea").eq(1).val(data.weaknesses);
+                $("#summary textarea").eq(2).val(data.actions);
             }
-            // Get strengths, weaknesses, and actions
-            $("#summary textarea").eq(0).val(data.strengths);
-            $("#summary textarea").eq(1).val(data.weaknesses);
-            $("#summary textarea").eq(2).val(data.actions);
         } else {
             console.log("ERROR IN NARRATIVE QUERY RESPONSE")
         }
