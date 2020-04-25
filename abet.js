@@ -22,14 +22,13 @@ var populateResults = function(outcomeId, major, paramString) {
                 for (var i = 0; i < 3; i++) {
                     $("td input").eq(i).val(0);
                 }
-                sumResults();
+            } else {
+                // Expect back 'description' and 'numberOfStudents'
+                $("td input").eq(0).val(data[0].numberOfStudents);
+                $("td input").eq(1).val(data[1].numberOfStudents);
+                $("td input").eq(2).val(data[2].numberOfStudents);
             }
-            // Expect back 'description' and 'numberOfStudents'
-            $("td input").eq(0).val(data[0].numberOfStudents);
-            $("td input").eq(1).val(data[1].numberOfStudents);
-            $("td input").eq(2).val(data[2].numberOfStudents);
-            // $("td").eq(3).html(data[0].numberOfStudents + data[1].numberOfStudents + data[2].numberOfStudents)
-
+            sumResults();
         } else {
             console.log("ERROR IN RESULTS QUERY RESPONSE")
         }
@@ -70,6 +69,8 @@ var populateSummaries = function() {
 };
 
 var sumResults = function() {
+    $("td").eq(3).empty();
+
     var sum = 0;
     for (var i = 0; i < 3; i++) {
         sum += $("td input").eq(i).val();
