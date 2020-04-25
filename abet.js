@@ -78,7 +78,7 @@ var sumResults = function() {
 };
 
 $(document).ready(function() {
-    $("td input").on("change", zeroResults);
+    $("td input").on("change", sumResults);
 
     $(".bttn.new").on("click", function() {
         $("#assessment tr:last").after(row);
