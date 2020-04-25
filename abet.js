@@ -25,6 +25,8 @@ var populateResults = function(paramString) {
             console.log(outcome)
 
             // Expect back 'description' and 'numberOfStudents'
+        } else {
+            console.log("ERROR IN RESULTS QUERY")
         }
     }
 };
