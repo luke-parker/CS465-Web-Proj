@@ -71,7 +71,7 @@ var populateSummaries = function(paramString) {
         if (this.status === 200) {
             var data = this.response;
             
-            if (data.length === 0) {
+            if (data.length == 0 || data.length == null) {
                 for (var i = 0; i < 3; i++) {
                     $("#summary textarea").eq(i).val(null);
                 }
