@@ -20,12 +20,12 @@ $(document).ready(function() {
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
         // selectedOutcomeId = $(this).innerHTML;
-        console.log("Outcome switched to " + $(this).innerHTML);
-
-        // Pass the outcome ID to the following Ajax queries.
-        populateResults();
-        populateAssessments();
-        populateSummaries();
+        // console.log("Outcome switched to " + $(this).innerHTML);
+        //
+        // // Pass the outcome ID to the following Ajax queries.
+        // populateResults();
+        // populateAssessments();
+        // populateSummaries();
     });
 
     var fetchOutcomes = function() {
@@ -64,6 +64,13 @@ $(document).ready(function() {
                     $("#select_course").after(firstline.replace(/#/g, t.outcomeId));
                 } else {
                     $(".outcome.first").after(newline.replace(/#/g, t.outcomeId));
+                }
+            }
+
+            var outcomeLabels = document.getElementsByClassName("outcome");
+            for (i = 0; i < outcomeLabels.length; i++) {
+                outcomeLabels[i].onclick function {
+                    console.log("outcome clicked");
                 }
             }
 
