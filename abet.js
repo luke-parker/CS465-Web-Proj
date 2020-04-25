@@ -14,16 +14,16 @@ var populateResults = function(outcomeId, major, paramString) {
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
             var data = this.response;
-            console.log("received good data!");
-            console.log(data)
+            $(".outcome_description").empty();
+            $(".outcome_description").append("<b>Outcome " + outcomeId + " - " + major + ": </b>");
+            $(".outcome_description").append("<span>" + outcomeMap[outcomeId] + "</span>");
+
 
             // Expect back 'description' and 'numberOfStudents'
             for (var i = 0; i < data.length; i++) {
                 console.log(data[i].description);
                 console.log(data[i].numberOfStudents);
-
-                $(".outcome_description").append("<b>Outcome " + outcomeId + " - " + major + ": </b>");
-                $(".outcome_description").append("<span>" + outcomeMap[outcomeId] + "</span>");
+                
             }
         } else {
             console.log("ERROR IN RESULTS QUERY RESPONSE")
