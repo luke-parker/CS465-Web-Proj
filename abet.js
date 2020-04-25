@@ -8,7 +8,7 @@ var row = `
 </tr>
 `;
 
-var populateResults = function(outcomeId, paramString) {
+var populateResults = function(outcomeId, major, paramString) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.addEventListener("load", function() {
@@ -22,7 +22,8 @@ var populateResults = function(outcomeId, paramString) {
                 console.log(data[i].description);
                 console.log(data[i].numberOfStudents);
 
-                console.log(outcomeMap[outcomeId]);
+                $(".outcome_description").append("<b>Outcome " + outcomeId + " - " + major + ": </b>");
+                $(".outcome_description").append("<span>" + outcomeMap[outcomeId] + "</span>");
             }
         } else {
             console.log("ERROR IN RESULTS QUERY RESPONSE")
@@ -73,7 +74,7 @@ $(document).ready(function() {
         var paramString = jQuery.param(params);
 
         // Pass the outcome ID to the following Ajax queries.
-        populateResults(outcomeId, paramString);
+        populateResults(outcomeId, major, paramString);
         populateAssessments(paramString);
         populateSummaries(paramString);
     });

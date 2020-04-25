@@ -21,7 +21,7 @@
                     <?php
                         echo(count($_SESSION['courses']));
                     ?>
-                    <span>Outcome # - Major: </span>Some outcome will be addressed here!
+                    <b>Outcome # - Major: </b><span>Some outcome will be addressed here!</span>
                 </div>
 
                 <table>
