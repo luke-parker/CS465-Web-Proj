@@ -13,7 +13,7 @@ var populateResults = function() {
     // Grab outcomeId, sectionId, and major
     var outcomeId = selectedOutcomeId;
     var sectionString = $("#select_course option:selected").text();
-    var major = sectionString.substr(sectionString.lastIndexOf(" "), sectionString.length);
+    var major = sectionString.substr(sectionString.lastIndexOf(" ")+1, sectionString.length);
     var sectionId = $("#select_course option:selected").val();
 
     var params = {
@@ -22,7 +22,23 @@ var populateResults = function() {
         "major":major
     };
 
-    console.log(jQuery.param(params))
+    var paramString = jQuery.param(params);
+
+    xhttp.addEventListener("load", results);
+    xhttp.responseType = "json";
+
+    xhttp.open("GET", "results.php?" + paramString;
+    xhttp.send(null);
+
+    var results = function() {
+        if (this.status === 200) {
+            var outcome = this.response;
+            console.log("received good data!");
+            console.log(outcome)
+
+            // Expect back 'description' and 'numberOfStudents'
+        }
+    }
 };
 
 var populateAssessments = function() {
@@ -46,10 +62,10 @@ $(document).ready(function() {
 
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
-        console.log("Outcome switched to " + $(this).find("label").html());
+        // console.log("Outcome switched to " + $(this).find("label").html());
         var outcomeStr = $(this).find("label").html()
         selectedOutcomeId = parseInt(outcomeStr.substr(outcomeStr.indexOf(" ")+1, outcomeStr.length));
-        console.log(selectedOutcomeId)
+
         // Pass the outcome ID to the following Ajax queries.
         populateResults();
         populateAssessments();
