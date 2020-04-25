@@ -92,6 +92,18 @@ var populateSummaries = function(paramString) {
     xhttp.send(null);
 };
 
+var saveResults = function() {
+    console.log("Button press received!")
+};
+
+var saveAssessments = function() {
+    console.log("Button press received!")
+};
+
+var saveNarrative = function() {
+    console.log("Button press received!")
+};
+
 var sumResults = function() {
     $("td").eq(3).empty();
 
@@ -103,6 +115,10 @@ var sumResults = function() {
 };
 
 $(document).ready(function() {
+    $("#saveResults").click(saveResults);
+    $("#saveAssessments").click(saveAssessments);
+    $("#saveNarrative").click(saveNarrative);
+
     $("td input").on("change", sumResults);
 
     $(".bttn.new").on("click", function() {
