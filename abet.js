@@ -13,11 +13,16 @@ var populateResults = function() {
     // Grab outcomeId, sectionId, and major
     var outcomeId = selectedOutcomeId;
     var sectionString = $("#select_course option:selected").text();
-    console.log("Got section: " + sectionString)
     var major = sectionString.substr(sectionString.lastIndexOf(" "), sectionString.length);
-    console.log("Got major: " + major);
     var sectionId = $("#select_course option:selected").val();
-    console.log("Got sectionId: " + sectionId);
+
+    var params = {
+        "outcomeId":outcomeId,
+        "sectionId":sectionId,
+        "major":major
+    };
+
+    console.log(jQuery.param(params))
 };
 
 var populateAssessments = function() {
