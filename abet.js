@@ -21,7 +21,9 @@ $(document).ready(function() {
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
         console.log("Outcome switched to " + $(this).find("label").html());
-
+        var outcomeStr = $(this).find("label").html()
+        selectedOutcomeId = parseInt(outcomeStr.substr(outcomeStr.indexOf(" ")+1, outcomeStr.length));
+        console.log(selectedOutcomeId)
         // Pass the outcome ID to the following Ajax queries.
         populateResults();
         populateAssessments();
