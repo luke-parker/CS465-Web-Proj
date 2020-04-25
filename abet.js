@@ -130,7 +130,19 @@ var saveNarrative = function() {
     local_params["weaknesses"] = $("#summary textarea").eq(1).val();
     local_params["actions"] = $("#summary textarea").eq(2).val();
 
-    paramString = jQuery.param(local_params);
+    var paramString = jQuery.param(local_params);
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.addEventListener("load", function() {
+        if (this.status === 200) {
+            console.log("Save successful!")
+        } else {
+            console.log("ERROR IN SAVING RESULTS!")
+        }
+    });
+        
+    xhttp.open("GET", "updateNarrative.php?" + paramString);
+    xhttp.send(null);
 };
 
 var sumResults = function() {
