@@ -1,5 +1,6 @@
 var selectedOutcomeId = 0;
 var outcomeMap = {};
+var params = {};
 var row = `
 <tr class="plan_row">
     <td width="5%"><input class="i" type="number" min="0" max="100" placeholder="1"></td>
@@ -92,8 +93,30 @@ var populateSummaries = function(paramString) {
     xhttp.send(null);
 };
 
+var sendResults = function(paramString) {
+    var xhttp = new XMLHttpRequest();
+    console.log(paramString)
+
+    xhttp.addEventListener("load", function() {
+        if (this.status === 200) {
+            console.log("Save successful!")
+        } else {
+            console.log("ERROR IN SAVING RESULTS!")
+        }
+    });
+        
+    xhttp.open("GET", "updateResults.php?" + paramString);
+    xhttp.send(null);
+};
+
 var saveResults = function() {
-    console.log("Button press received!")
+    for (var i = 0; i < 3; i++) {
+        var local_params = params;
+        local_params.push({"performanceLevel": i });
+        local_params.push({"numberOfStudents": $("td input").eq(i).val() });
+
+        sendResults(local_params);
+    }
 };
 
 var saveAssessments = function() {
@@ -141,7 +164,7 @@ $(document).ready(function() {
         var major = sectionString.substr(sectionString.lastIndexOf(" ")+1, sectionString.length);
         var sectionId = $("#select_course option:selected").val();
 
-        var params = {
+        params = {
             "outcomeId":outcomeId,
             "sectionId":sectionId,
             "major":major

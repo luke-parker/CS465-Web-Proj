@@ -91,7 +91,7 @@
                 <textarea class="i txt" placeholder="None" maxlength="2000" id="actions"></textarea>
 
                 <div class="bttn_clear" style="text-align: right">
-                    <a href="#"><button class="bttn save" id="saveNarrative">Save Narrative</button></a>
+                    <button class="bttn save" id="saveNarrative">Save Narrative</button>
                 </div>
                 </div>
             </div>
