@@ -67,7 +67,7 @@ $(document).ready(function() {
             var outcomeLabels = document.getElementsByClassName("outcome");
             for (i = 0; i < outcomeLabels.length; i++) {
                 outcomeLabels[i].onclick = function() {
-                    console.log("outcome clicked");
+                    console.log("outcome clicked. index: " + i);
                     // selectedOutcomeId = outcomeLabels[i].text();
                     console.log("Outcome switched to " + outcomeMap[i]);
 
