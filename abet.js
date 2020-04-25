@@ -18,7 +18,10 @@ var populateResults = function(paramString) {
     xhttp.open("GET", "results.php?" + paramString);
     xhttp.send(null);
 
+    console.log("Fetching results.")
+
     var results = function() {
+        console.log("In results!")
         if (this.status === 200) {
             var outcome = this.response;
             console.log("received good data!");
