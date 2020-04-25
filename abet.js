@@ -76,6 +76,9 @@ var populateSummaries = function(paramString) {
             var weaknesses = data[0].weaknesses;
             var actions = data[0].actions;
 
+            document.getElementById("strengths").value = strengths;
+            document.getElementById("weaknesses").value = weaknesses;
+            document.getElementById("actions").value = actions;
         } else {
             console.log("ERROR IN NARRATIVE QUERY RESPONSE")
         }
