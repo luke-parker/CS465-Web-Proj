@@ -20,7 +20,7 @@ $(document).ready(function() {
 
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
-        console.log("Outcome switched to " + $(this).innerHTML);
+        console.log("Outcome switched to " + $("label").html());
 
         // Pass the outcome ID to the following Ajax queries.
         populateResults();
