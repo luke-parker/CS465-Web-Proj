@@ -16,7 +16,7 @@ var populateResults = function() {
     console.log("Got section: " + sectionString)
     var major = sectionString.substr(sectionString.lastIndexOf(" "), sectionString.length);
     console.log("Got major: " + major);
-    var sectionId = $("select_course option:selected").val();
+    var sectionId = $("#select_course option:selected").val();
     console.log("Got sectionId: " + sectionId);
 };
 
