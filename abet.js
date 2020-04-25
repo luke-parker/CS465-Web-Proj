@@ -93,9 +93,10 @@ var populateSummaries = function(paramString) {
     xhttp.send(null);
 };
 
-var sendResults = function(paramString) {
+var sendResults = function(local_params) {
     var xhttp = new XMLHttpRequest();
     console.log(paramString)
+    paramString = jQuery.param(local_params);
 
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
@@ -120,11 +121,16 @@ var saveResults = function() {
 };
 
 var saveAssessments = function() {
-    console.log("Button press received!")
+    var local_params = params;
 };
 
 var saveNarrative = function() {
-    console.log("Button press received!")
+    var local_params = params;
+    local_params["strengths"] = $("#summary textarea").eq(0).val();
+    local_params["weaknesses"] = $("#summary textarea").eq(1).val();
+    local_params["actions"] = $("#summary textarea").eq(2).val();
+
+    paramString = jQuery.param(local_params);
 };
 
 var sumResults = function() {
