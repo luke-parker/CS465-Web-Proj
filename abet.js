@@ -102,8 +102,8 @@ $(document).ready(function() {
     }
 
       function buildOutcomes() {
-        var newline = "<div class=\"outcome\"><label>Outcome #</label></div>";
-        var firstline = "<div class=\"outcome first\"><label>Outcome #</a></div>"
+        var newline = "<div class=\"outcome\"><label id=\"outcome##">Outcome #</label></div>";
+        var firstline = "<div class=\"outcome first\"><label id=\"outcome##>Outcome #</a></div>"
         if (this.status === 200) {
             var outcome = this.response;
 
@@ -115,8 +115,10 @@ $(document).ready(function() {
                 // add top border on the first element
                 if (i == 0) {
                     $("#select_course").after(firstline.replace(/#/g, t.outcomeId));
+                    $("#select_course").after(firstline.replace(/##/g, i));
                 } else {
                     $(".outcome.first").after(newline.replace(/#/g, t.outcomeId));
+                    $(".outcome.first").after(newline.replace(/##/g, i));
                 }
             }
 
