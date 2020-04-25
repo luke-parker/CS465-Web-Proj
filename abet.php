@@ -31,14 +31,14 @@
                         <th>Total</th>
                     </tr>
                     <tr>
-                        <td><input class="i" type="number" min="0" placeholder="0"></td>
-                        <td><input class="i" type="number" min="0" placeholder="0"></td>
-                        <td><input class="i" type="number" min="0" placeholder="0"></td>
+                        <td><input class="i" type="number" min="0" placeholder="0" id="notMeetsExpectations"></td>
+                        <td><input class="i" type="number" min="0" placeholder="0" id="meetsExpectations"></td>
+                        <td><input class="i" type="number" min="0" placeholder="0" id="exceedsExpectations"></td>
                         <td>180</td>
                     </tr>
                 </table>
                 <div class="bttn_clear" style="text-align: right">
-                    <button class="bttn save">Save Results</button>
+                    <button class="bttn save" id="saveResults">Save Results</button>
                 </div>
                 <hr class="b">
                 </div>
@@ -69,11 +69,11 @@
                     </table>
 
                     <div class="bttn_clear" style="text-align: left">
-                        <button class="bttn new">+ New</button>
+                        <button class="bttn new" id="newAssessment">+ New</button>
                     </div>
 
                     <div class="bttn_clear" style="text-align: right">
-                        <button class="bttn save">Save Assessments</button>
+                        <button class="bttn save" id="saveAssessments">Save Assessments</button>
                     </div>
                 <hr class="b">
                 </div>
