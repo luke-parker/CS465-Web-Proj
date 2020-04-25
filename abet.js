@@ -1,3 +1,9 @@
+/////////////////////////////////////////////////
+//// Web Project III
+//// Created by:
+//// Todd Allen and Luke Parker
+/////////////////////////////////////////////////
+
 var selectedOutcomeId = 0;
 var outcomeMap = {};
 var params = {};
@@ -10,9 +16,13 @@ var row = `
 </tr>
 `;
 
+/////////////////////////////////////////////////
+//// Populate Methods
+/////////////////////////////////////////////////
+
 var populateResults = function(outcomeId, major, paramString) {
     var xhttp = new XMLHttpRequest();
-    console.log(paramString)
+
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
             var data = this.response;
@@ -96,6 +106,10 @@ var populateSummaries = function(paramString) {
     xhttp.send(null);
 };
 
+/////////////////////////////////////////////////
+//// Saving Methods
+/////////////////////////////////////////////////
+
 var sendResults = function(local_params) {
     var xhttp = new XMLHttpRequest();
     var paramString = jQuery.param(local_params);
@@ -154,6 +168,10 @@ var saveNarrative = function() {
     xhttp.send(null);
 };
 
+/////////////////////////////////////////////////
+//// Helper Methods
+/////////////////////////////////////////////////
+
 var sumResults = function() {
     $("td").eq(3).empty();
 
@@ -163,6 +181,11 @@ var sumResults = function() {
     }
     $("td").eq(3).html(sum);
 };
+
+/////////////////////////////////////////////////
+//// Click handlers
+//// Yes some of these could have been pulled out
+/////////////////////////////////////////////////
 
 $(document).ready(function() {
     $("#saveResults").click(saveResults);
@@ -249,20 +272,6 @@ $(document).ready(function() {
                     $(".outcome.first").after(line);
                 }
             }
-
-            // var outcomeLabels = document.getElementsByClassName("outcome");
-            // for (i = 0; i < outcomeLabels.length; i++) {
-            //     outcomeLabels[i].onclick = function() {
-            //         console.log("outcome clicked. index: " + i);
-            //         // selectedOutcomeId = outcomeLabels[i].text();
-            //         console.log("Outcome switched to " + outcomeMap[i]);
-            //
-            //         // Pass the outcome ID to the following Ajax queries.
-            //         // populateResults();
-            //         // populateAssessments();
-            //         // populateSummaries();
-            //     }
-            // }
 
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
