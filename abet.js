@@ -114,11 +114,13 @@ $(document).ready(function() {
 
                 // add top border on the first element
                 if (i == 0) {
-                    $("#select_course").after(firstline.replace(/#/g, t.outcomeId));
-                    $("#select_course").after(firstline.replace(/_/g, i));
+                    var line = firstline.replace(/#/g, t.outcomeId);
+                    line = line.replace(/_/g, i);
+                    $("#select_course").after(line);
                 } else {
-                    $(".outcome.first").after(newline.replace(/#/g, t.outcomeId));
-                    $(".outcome.first").after(newline.replace(/_/g, i));
+                    var line = newline.replace(/#/g, t.outcomeId);
+                    line = line.replace(/_/g, i);
+                    $(".outcome.first").after(line);
                 }
             }
 
