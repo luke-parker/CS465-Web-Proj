@@ -72,6 +72,7 @@ var populateSummaries = function(paramString) {
             var data = this.response;
             
             console.log("Got data of length: " + data.length)
+            console.log(data)
             if (data.length == 0) {
                 for (var i = 0; i < 3; i++) {
                     $("#summary textarea").eq(i).val(null);
