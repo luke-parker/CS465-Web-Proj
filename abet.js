@@ -36,8 +36,27 @@ var populateResults = function(outcomeId, major, paramString) {
     xhttp.send(null);
 };
 
-var populateAssessments = function() {
+var populateAssessments = function(paramString) {
     var xhttp = new XMLHttpRequest();
+
+    xhttp.addEventListener("load", function() {
+        if (this.status === 200) {
+            var data = this.response;
+            // Get assessmentDescription and weight
+            for (var i = 0; i < data.length; i++) {
+                $("assessment").append(row);
+                $(".plan_row:last .i:first").val(data[i].weight);
+                $(".plan_row:last .i.txt").val(data[i].assessmentDescription);
+            }
+        } else {
+            console.log("ERROR IN ASSESSMENT QUERY RESPONSE")
+        }
+    });
+    
+    xhttp.responseType = "json";
+    
+    xhttp.open("GET", "assessment.php?" + paramString);
+    xhttp.send(null);
 };
 
 var populateSummaries = function() {
