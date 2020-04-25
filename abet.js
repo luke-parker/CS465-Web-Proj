@@ -95,8 +95,7 @@ var populateSummaries = function(paramString) {
 
 var sendResults = function(local_params) {
     var xhttp = new XMLHttpRequest();
-    console.log(paramString)
-    paramString = jQuery.param(local_params);
+    var paramString = jQuery.param(local_params);
 
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
