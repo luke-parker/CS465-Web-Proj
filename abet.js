@@ -13,7 +13,18 @@ var populateResults = function(paramString) {
     console.log(paramString)
     var xhttp = new XMLHttpRequest();
 
-    xhttp.addEventListener("load", results);
+    xhttp.addEventListener("load", function() {
+        console.log("In results!")
+        if (this.status === 200) {
+            var outcome = this.response;
+            console.log("received good data!");
+            console.log(outcome)
+
+            // Expect back 'description' and 'numberOfStudents'
+        } else {
+            console.log("ERROR IN RESULTS QUERY")
+        }
+    });
     xhttp.responseType = "json";
 
     xhttp.open("GET", "results.php?" + paramString);
