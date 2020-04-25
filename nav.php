@@ -1,16 +1,16 @@
         <div id="header">UTK ABET
-            <div class="dropdown">
+            <div class="dropdown" id="userMenu">
               <img src="caret-down-fill.svg" alt="down arrow"><img src="person-fill.svg" alt="person">
               <div class="dropdown-content">
-                <a href="password.php">Change password</a>
-                <a href="login.html">Logout</a>
+                <a href="password.php" id="changePassword">Change password</a>
+                <a href="login.html id="logout"">Logout</a>
               </div>
             </div>
         </div>
 
         <div id="container">
             <div id="nav">
-                <span id="sec">Section:</span><br>
+                <span id="sectionMenu">Section:</span><br>
 
                 <select id="select_course">
                     <?php
