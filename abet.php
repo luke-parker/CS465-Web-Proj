@@ -84,14 +84,14 @@
                 improving student attainment of each outcome.
                 </p><br>
                 <b>Strengths:</b><br>
-                <textarea class="i txt" placeholder="None" maxlength="2000"></textarea><br>
+                <textarea class="i txt" placeholder="None" maxlength="2000" id="strengths"></textarea><br>
                 <b>Weaknesses:</b><br>
-                <textarea class="i txt" placeholder="None" maxlength="2000"></textarea><br>
+                <textarea class="i txt" placeholder="None" maxlength="2000" id="weaknesses"></textarea><br>
                 <b>Actions:</b><br>
-                <textarea class="i txt" placeholder="None" maxlength="2000"></textarea>
+                <textarea class="i txt" placeholder="None" maxlength="2000" id="actions"></textarea>
 
                 <div class="bttn_clear" style="text-align: right">
-                    <a href="#"><button class="bttn save">Save Narrative</button></a>
+                    <a href="#"><button class="bttn save" id="saveNarrative">Save Narrative</button></a>
                 </div>
                 </div>
             </div>
