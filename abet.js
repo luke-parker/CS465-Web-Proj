@@ -73,7 +73,7 @@ var sumResults = function() {
 
     var sum = 0;
     for (var i = 0; i < 3; i++) {
-        sum += $("td input").eq(i).val();
+        sum += parseInt($("td input").eq(i).val());
     }
     $("td").eq(3).html(sum);
 };

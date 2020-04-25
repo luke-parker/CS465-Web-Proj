@@ -34,7 +34,7 @@
                         <td><input class="i" type="number" min="0" placeholder="0" id="notMeetsExpectations"></td>
                         <td><input class="i" type="number" min="0" placeholder="0" id="meetsExpectations"></td>
                         <td><input class="i" type="number" min="0" placeholder="0" id="exceedsExpectations"></td>
-                        <td>180</td>
+                        <td></td>
                     </tr>
                 </table>
                 <div class="bttn_clear" style="text-align: right">
