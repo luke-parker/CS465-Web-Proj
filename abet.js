@@ -48,8 +48,8 @@ $(document).ready(function() {
     }
 
       function buildOutcomes() {
-        var newline = "<div class=\"outcome\"><a href=\"abet.php?outcome=#\">Outcome #</a></div>";
-        var firstline = "<div class=\"outcome first\"><a href=\"abet.php?outcome=#\">Outcome #</a></div>"
+        var newline = "<div class=\"outcome\"><label>Outcome #</label></div>";
+        var firstline = "<div class=\"outcome first\"><label>Outcome #</a></div>"
         if (this.status === 200) {
             var outcome = this.response;
 
