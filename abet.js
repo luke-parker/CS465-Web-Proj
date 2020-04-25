@@ -57,14 +57,14 @@ var populateAssessments = function(paramString) {
             console.log("ERROR IN ASSESSMENT QUERY RESPONSE")
         }
     });
-    
+
     xhttp.responseType = "json";
-    
+
     xhttp.open("GET", "assessment.php?" + paramString);
     xhttp.send(null);
 };
 
-var populateAssessments = function(paramString) {
+var populateSummaries = function(paramString) {
     var xhttp = new XMLHttpRequest();
 
     xhttp.addEventListener("load", function() {
