@@ -70,12 +70,11 @@ var populateSummaries = function(paramString) {
     xhttp.addEventListener("load", function() {
         if (this.status === 200) {
             var data = this.response;
+            console.log("Got data: " + data);
             // Get narratives
             var strengths = data[0].strengths;
             var weaknesses = data[0].weaknesses;
             var actions = data[0].actions;
-
-            console.log("Got strengths: " + strengths);
 
         } else {
             console.log("ERROR IN NARRATIVE QUERY RESPONSE")
