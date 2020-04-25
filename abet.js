@@ -7,6 +7,8 @@ var row = `
 `;
 
 $(document).ready(function() {
+    var selectedOutcomeId = 0;
+
     $(".bttn.new").on("click", function() {
         $("#assessment tr:last").after(row);
     });
@@ -17,7 +19,8 @@ $(document).ready(function() {
 
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
-        console.log("Outcome switched to " + outcomeId);
+        // selectedOutcomeId = $(this).innerHTML;
+        console.log("Outcome switched to " + $(this).innerHTML);
 
         // Pass the outcome ID to the following Ajax queries.
         populateResults();
