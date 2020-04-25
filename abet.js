@@ -20,7 +20,12 @@ $(document).ready(function() {
 
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
+        console.log("Outcome switched to " + $(this).innerHTML);
 
+        // Pass the outcome ID to the following Ajax queries.
+        populateResults();
+        populateAssessments();
+        populateSummaries();
     });
 
     var fetchOutcomes = function() {
@@ -64,19 +69,19 @@ $(document).ready(function() {
                 }
             }
 
-            var outcomeLabels = document.getElementsByClassName("outcome");
-            for (i = 0; i < outcomeLabels.length; i++) {
-                outcomeLabels[i].onclick = function() {
-                    console.log("outcome clicked. index: " + i);
-                    // selectedOutcomeId = outcomeLabels[i].text();
-                    console.log("Outcome switched to " + outcomeMap[i]);
-
-                    // Pass the outcome ID to the following Ajax queries.
-                    // populateResults();
-                    // populateAssessments();
-                    // populateSummaries();
-                }
-            }
+            // var outcomeLabels = document.getElementsByClassName("outcome");
+            // for (i = 0; i < outcomeLabels.length; i++) {
+            //     outcomeLabels[i].onclick = function() {
+            //         console.log("outcome clicked. index: " + i);
+            //         // selectedOutcomeId = outcomeLabels[i].text();
+            //         console.log("Outcome switched to " + outcomeMap[i]);
+            //
+            //         // Pass the outcome ID to the following Ajax queries.
+            //         // populateResults();
+            //         // populateAssessments();
+            //         // populateSummaries();
+            //     }
+            // }
 
         } else {
             console.log("A CRITICAL ERROR HAS OCCURED!");
