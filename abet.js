@@ -65,7 +65,7 @@ $(document).ready(function() {
             for (i = 0; i < outcomeLabels.length; i++) {
                 outcomeLabels[i].onclick = function() {
                     console.log("outcome clicked");
-                    selectedOutcomeId = outcomeLabels[i].textContent;
+                    selectedOutcomeId = outcomeLabels[i].text();
                     console.log("Outcome switched to " + selectedOutcomeId);
 
                     // Pass the outcome ID to the following Ajax queries.
