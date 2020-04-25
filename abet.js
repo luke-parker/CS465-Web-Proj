@@ -1,6 +1,7 @@
 var selectedOutcomeId = 0;
 var outcomeMap = {};
 var params = {};
+var assessmentId = 20;
 var row = `
 <tr class="plan_row">
     <td width="5%"><input class="i" type="number" min="0" max="100" placeholder="1"></td>
@@ -73,7 +74,7 @@ var populateSummaries = function(paramString) {
         if (this.status === 200) {
             var data = this.response;
             
-            if (data.length == 0) {
+            if (data == null || data.length == 0) {
                 for (var i = 0; i < 3; i++) {
                     $("#summary textarea").eq(i).empty();
                 }
@@ -121,7 +122,14 @@ var saveResults = function() {
 };
 
 var saveAssessments = function() {
-    var local_params = params;
+    // var local_params = params;
+    // local_params["assessmentId"] = assessmentId;
+    // assessmentId++;
+    // local_params["assessmentDescription"] = ;
+    // local_params["weight"] = ;
+    // $(".plan_row:last .i:first").val();
+    // $(".plan_row:last .i.txt").val();
+    // this is gonna require a for loop and probably that .at() thing
 };
 
 var saveNarrative = function() {
