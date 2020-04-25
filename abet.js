@@ -112,8 +112,8 @@ var sendResults = function(paramString) {
 var saveResults = function() {
     for (var i = 0; i < 3; i++) {
         var local_params = params;
-        local_params.push({"performanceLevel": i });
-        local_params.push({"numberOfStudents": $("td input").eq(i).val() });
+        local_params["performanceLevel"] = i;
+        local_params["numberOfStudents"] = $("td input").eq(i).val();
 
         sendResults(local_params);
     }
