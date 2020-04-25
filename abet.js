@@ -18,17 +18,13 @@ var populateResults = function(outcomeId, major, paramString) {
             $(".outcome_description").append("<b>Outcome " + outcomeId + " - " + major + ": </b>");
             $(".outcome_description").append("<span>" + outcomeMap[outcomeId] + "</span>");
 
-
+            if (data.length == 0) return;
             // Expect back 'description' and 'numberOfStudents'
-            $(".i input :first").val(data[0].numberOfStudents);
-            $(".i input :nth-child(2)").val(data[1].numberOfStudents);
-            $(".i input :nth-child(3)").val(data[2].numberOfStudents);
-            $("#results td :nth-child(4)").html(data[0].numberOfStudents + data[1].numberOfStudents + data[2].numberOfStudents)
-            for (var i = 0; i < data.length; i++) {
-                console.log(data[i].description);
-                console.log(data[i].numberOfStudents);
+            $("td input").eq(0).val(data[0].numberOfStudents);
+            $("td input").eq(1).val(data[1].numberOfStudents);
+            $("td input").eq(2).val(data[2].numberOfStudents);
+            $("td").eq(3).html(data[0].numberOfStudents + data[1].numberOfStudents + data[2].numberOfStudents)
 
-            }
         } else {
             console.log("ERROR IN RESULTS QUERY RESPONSE")
         }
