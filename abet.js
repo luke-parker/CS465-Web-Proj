@@ -19,13 +19,7 @@ $(document).ready(function() {
 
     // When an outcome is clicked, populate that outcome's information
     $(document).on("click", ".outcome", function() {
-        // selectedOutcomeId = $(this).innerHTML;
-        // console.log("Outcome switched to " + $(this).innerHTML);
-        //
-        // // Pass the outcome ID to the following Ajax queries.
-        // populateResults();
-        // populateAssessments();
-        // populateSummaries();
+
     });
 
     var fetchOutcomes = function() {
@@ -71,6 +65,13 @@ $(document).ready(function() {
             for (i = 0; i < outcomeLabels.length; i++) {
                 outcomeLabels[i].onclick = function() {
                     console.log("outcome clicked");
+                    selectedOutcomeId = outcomeLabels[i].textContent;
+                    console.log("Outcome switched to " + selectedOutcomeId);
+
+                    // Pass the outcome ID to the following Ajax queries.
+                    // populateResults();
+                    // populateAssessments();
+                    // populateSummaries();
                 }
             }
 
